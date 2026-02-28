@@ -16,20 +16,28 @@ function addTask() {
 
 function createTaskElement(text) {
   const li = document.createElement("li");
-  li.textContent = text;
 
-  li.addEventListener("click", function () {
+  const span = document.createElement("span");
+  span.textContent = text;
+
+  const deleteBtn = document.createElement("button");
+  deleteBtn.textContent = "Delete";
+  deleteBtn.classList.add("delete-btn");
+
+  deleteBtn.addEventListener("click", function () {
     li.style.transform = "scale(0.8)";
     li.style.opacity = "0";
+
     setTimeout(() => {
       li.remove();
       removeTask(text);
     }, 300);
   });
 
+  li.appendChild(span);
+  li.appendChild(deleteBtn);
   taskList.appendChild(li);
 }
-
 function saveTask(text) {
   let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
   tasks.push(text);
