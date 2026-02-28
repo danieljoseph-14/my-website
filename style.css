@@ -233,3 +233,12 @@ body {
   background: #222;
   color: white;
 }
+/* Dark Mode Input */
+body:not(.light-mode) .input-group input {
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+}
+
+body:not(.light-mode) .input-group input {
+  background: rgba(0, 0, 0, 0.4);
+}
