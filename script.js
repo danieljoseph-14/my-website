@@ -76,43 +76,21 @@ function updateStorage() {
   });
   localStorage.setItem("tasks", JSON.stringify(allTasks));
 }
-let draggedItem = null;
+function filterTasks(type) {
+  const tasks = document.querySelectorAll("#taskList li");
 
-document.addEventListener("dragstart", function (e) {
-  if (e.target.tagName === "LI") {
-    draggedItem = e.target;
-    e.target.style.opacity = "0.5";
-  }
-});
+  tasks.forEach(li => {
+    const textSpan = li.querySelector(".task-text");
+    const isCompleted = textSpan.classList.contains("completed");
 
-document.addEventListener("dragend", function (e) {
-  if (e.target.tagName === "LI") {
-    e.target.style.opacity = "1";
-    updateStorage();
-  }
-});
-
-document.addEventListener("dragover", function (e) {
-  e.preventDefault();
-  const afterElement = getDragAfterElement(taskList, e.clientY);
-  if (afterElement == null) {
-    taskList.appendChild(draggedItem);
-  } else {
-    taskList.insertBefore(draggedItem, afterElement);
-  }
-});
-
-function getDragAfterElement(container, y) {
-  const draggableElements = [...container.querySelectorAll("li:not(.dragging)")];
-
-  return draggableElements.reduce((closest, child) => {
-    const box = child.getBoundingClientRect();
-    const offset = y - box.top - box.height / 2;
-
-    if (offset < 0 && offset > closest.offset) {
-      return { offset: offset, element: child };
-    } else {
-      return closest;
+    if (type === "all") {
+      li.style.display = "flex";
+    } 
+    else if (type === "active") {
+      li.style.display = isCompleted ? "none" : "flex";
+    } 
+    else if (type === "completed") {
+      li.style.display = isCompleted ? "flex" : "none";
     }
-  }, { offset: Number.NEGATIVE_INFINITY }).element;
+  });
 }
