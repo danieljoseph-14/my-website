@@ -7,7 +7,9 @@ function addTask() {
     alert("Please enter a task");
     return;
   }
-
+  li.onclick = function () {
+  li.style.textDecoration = "line-through";
+};
   const li = document.createElement("li");
   li.textContent = taskText;
 
