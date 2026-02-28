@@ -1,7 +1,8 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #f4f6f9;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
 }
 
 /* Navbar */
@@ -104,14 +105,9 @@ li {
 }
 
 .todo-container {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
-  padding: 40px;
-  border-radius: 15px;
-  width: 350px;
-  text-align: center;
   color: white;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
 .input-group {
@@ -305,9 +301,9 @@ li[draggable="true"]:active {
   transform: scale(1.05);
 }
 
-/* Light Mode Styles */
 .light-mode {
   background: #f4f6f9 !important;
+  color: black;
 }
 
 .light-mode .todo-container {
@@ -317,5 +313,10 @@ li[draggable="true"]:active {
 
 .light-mode #taskList li {
   background: #eee;
+  color: black;
+}
+
+.light-mode input {
+  background: #f0f0f0;
   color: black;
 }
