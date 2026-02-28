@@ -1,10 +1,27 @@
+body,
+.todo-container,
+#taskList li,
+input,
+button {
+  transition: background 0.4s ease,
+              color 0.4s ease,
+              box-shadow 0.4s ease,
+              transform 0.3s ease;
+}
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(135deg, #1e1e2f, #2b1055);
   color: white;
 }
 
+.todo-container {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
 /* Navbar */
 nav {
   display: flex;
@@ -286,37 +303,33 @@ li[draggable="true"]:active {
   position: absolute;
   top: 20px;
   right: 20px;
-  padding: 6px 12px;
+  padding: 6px 14px;
+  border-radius: 20px;
   border: none;
-  background: #111;
-  color: white;
-  border-radius: 6px;
   cursor: pointer;
   font-size: 12px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
   transition: 0.3s ease;
 }
 
 .theme-btn:hover {
-  background: #333;
   transform: scale(1.05);
 }
-
 .light-mode {
-  background: #f4f6f9 !important;
-  color: black;
+  background: linear-gradient(135deg, #f5f7fa, #e4e8f0);
+  color: #222;
 }
 
 .light-mode .todo-container {
   background: white;
-  color: black;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
 .light-mode #taskList li {
-  background: #eee;
-  color: black;
+  background: #f2f2f2;
 }
-
-.light-mode input {
-  background: #f0f0f0;
-  color: black;
+.light-mode .theme-btn {
+  background: #222;
+  color: white;
 }
