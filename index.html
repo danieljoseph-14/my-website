@@ -1,16 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Daniel Joseph</title>
+  <title>Daniel Joseph | Portfolio</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="container">
-    <h1>Hi, I'm Daniel 👋</h1>
-    <p>I am building websites using VS Code, GitHub & Vercel.</p>
-    <button onclick="showMessage()">Click Me</button>
-  </div>
+  <nav>
+    <h2>Daniel</h2>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#todo">To-Do App</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <h1>Hello, I'm Daniel 👋</h1>
+    <p>Frontend Developer in Progress 🚀</p>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I am learning web development using HTML, CSS, JavaScript, Git & Vercel.</p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project-card">
+      <h3>To-Do App</h3>
+      <p>A simple task manager built with JavaScript.</p>
+    </div>
+  </section>
+
+  <section id="todo">
+    <h2>My To-Do App</h2>
+    <input type="text" id="taskInput" placeholder="Enter task">
+    <button onclick="addTask()">Add</button>
+    <ul id="taskList"></ul>
+  </section>
+
+  <footer>
+    <p>© 2026 Daniel Joseph</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
