@@ -1,3 +1,6 @@
+/* =========================
+   GLOBAL TRANSITIONS
+========================= */
 body,
 .todo-container,
 #taskList li,
@@ -8,6 +11,10 @@ button {
               box-shadow 0.4s ease,
               transform 0.3s ease;
 }
+
+/* =========================
+   DARK MODE DEFAULT
+========================= */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -19,120 +26,23 @@ body {
   height: 100vh;
 }
 
+/* =========================
+   MAIN CONTAINER
+========================= */
 .todo-container {
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(12px);
   padding: 40px;
   border-radius: 20px;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
-  width: 350px;
+  width: 360px;
   text-align: center;
-}
-/* Navbar */
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  background: white;
-  color: black;
+  position: relative;
 }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-
-nav a {
-  color: black;
-  text-decoration: none;
-  font-weight: 500;
-  transition: 0.3s ease;
-}
-
-nav a:hover {
-  color: #667eea;
-}
-
-/* Hero */
-.hero {
-  text-align: center;
-  padding: 100px 20px;
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  color: white;
-}
-
-/* Sections */
-.section {
-  padding: 60px 20px;
-  text-align: center;
-}
-
-/* Project Card */
-.project-card {
-  background: white;
-  padding: 20px;
-  margin: 20px auto;
-  width: 300px;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.btn {
-  display: inline-block;
-  padding: 8px 15px;
-  background: #667eea;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-}
-input {
-  padding: 8px;
-  width: 200px;
-}
-
-button {
-  padding: 8px 12px;
-  background: #667eea;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-li {
-  background: white;
-  margin: 10px auto;
-  padding: 10px;
-  width: 300px;
-  border-radius: 5px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-/* ===== TODO APP MODERN UI ===== */
-
-.todo-body {
-  margin: 0;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  font-family: Arial, sans-serif;
-}
-
-.todo-container {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  color: white;
-}
-
+/* =========================
+   INPUT AREA
+========================= */
 .input-group {
   display: flex;
   gap: 10px;
@@ -142,7 +52,7 @@ li {
 .input-group input {
   flex: 1;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 8px;
   border: none;
   outline: none;
 }
@@ -152,16 +62,17 @@ li {
   border: none;
   background: #111;
   color: white;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: 0.3s;
 }
 
 .input-group button:hover {
-  background: #333;
   transform: scale(1.05);
 }
 
+/* =========================
+   TASK LIST
+========================= */
 #taskList {
   list-style: none;
   padding: 0;
@@ -169,65 +80,48 @@ li {
 }
 
 #taskList li {
-  background: rgba(255,255,255,0.25);
-  padding: 14px;
-  border-radius: 10px;
-  margin-top: 15px;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-  animation: taskAppear 0.5s ease-out;
-  transform-origin: center;
-  transition: all 0.3s ease;
-}
-
-#taskList li:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-}
-
-@keyframes taskAppear {
-  0% {
-    opacity: 0;
-    transform: translateY(30px) scale(0.8);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-#taskList li {
-  animation: fadeSlideIn 0.4s ease forwards;
-}/* ===== Premium Task Animation ===== */
-
-#taskList li {
-  background: rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.15);
   padding: 12px;
-  border-radius: 8px;
+  border-radius: 10px;
   margin-top: 12px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   backdrop-filter: blur(8px);
-  animation: taskAppear 0.4s cubic-bezier(.17,.67,.83,.67);
-  transition: all 0.3s ease;
+  animation: taskAppear 0.4s ease;
 }
 
 #taskList li:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
 @keyframes taskAppear {
-  0% {
+  from {
     opacity: 0;
-    transform: scale(0.9) translateY(15px);
+    transform: translateY(10px) scale(0.95);
   }
-  100% {
+  to {
     opacity: 1;
-    transform: scale(1) translateY(0);
+    transform: translateY(0) scale(1);
   }
 }
+
+/* =========================
+   TASK TEXT
+========================= */
+.task-text {
+  cursor: pointer;
+}
+
+.task-text.completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+/* =========================
+   DELETE BUTTON
+========================= */
 .delete-btn {
   background: #ff4d4d;
   border: none;
@@ -235,31 +129,16 @@ li {
   color: white;
   border-radius: 6px;
   cursor: pointer;
-  transition: all 0.3s ease;
   font-size: 12px;
 }
 
 .delete-btn:hover {
-  background: #e60000;
   transform: scale(1.1);
 }
-.task-text {
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
 
-.task-text.completed {
-  text-decoration: line-through;
-  opacity: 0.6;
-  transform: scale(0.95);
-}
-li[draggable="true"] {
-  cursor: grab;
-}
-
-li[draggable="true"]:active {
-  cursor: grabbing;
-}
+/* =========================
+   FILTER BUTTONS
+========================= */
 .filters {
   margin-top: 20px;
   display: flex;
@@ -274,41 +153,47 @@ li[draggable="true"]:active {
   color: white;
   border-radius: 6px;
   cursor: pointer;
-  transition: 0.3s;
   font-size: 12px;
 }
 
 .filters button:hover {
-  background: #444;
   transform: scale(1.05);
 }
+
+/* =========================
+   TASK COUNTER
+========================= */
 #taskCounter {
   margin-top: 15px;
   font-size: 14px;
   opacity: 0.9;
 }
+
+/* =========================
+   CLEAR COMPLETED BUTTON
+========================= */
 .clear-btn {
-  margin-top: 10px;
+  margin-top: 15px;
   padding: 6px 12px;
   border: none;
   background: #ff9800;
   color: white;
   border-radius: 6px;
   cursor: pointer;
-  transition: 0.3s ease;
   font-size: 12px;
 }
 
 .clear-btn:hover {
-  background: #e68900;
   transform: scale(1.05);
 }
-/* ===== THEME TOGGLE ===== */
 
+/* =========================
+   THEME TOGGLE BUTTON
+========================= */
 .theme-btn {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 15px;
+  right: 15px;
   padding: 6px 14px;
   border-radius: 20px;
   border: none;
@@ -316,17 +201,15 @@ li[draggable="true"]:active {
   font-size: 12px;
   background: rgba(0, 0, 0, 0.6);
   color: white;
-  transition: 0.3s ease;
 }
 
 .theme-btn:hover {
   transform: scale(1.05);
 }
-.light-mode {
-  background: linear-gradient(135deg, #f5f7fa, #e4e8f0);
-  color: #222;
-}
 
+/* =========================
+   LIGHT MODE
+========================= */
 .light-mode {
   background: linear-gradient(135deg, #f5f7fa, #e4e8f0);
   color: #222;
@@ -336,6 +219,16 @@ li[draggable="true"]:active {
   background: white;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
+
+.light-mode #taskList li {
+  background: #f0f0f0;
+}
+
+.light-mode .filters button {
+  background: #ddd;
+  color: #222;
+}
+
 .light-mode .theme-btn {
   background: #222;
   color: white;
