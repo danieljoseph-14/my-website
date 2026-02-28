@@ -243,40 +243,55 @@ body:not(.light-mode) .input-group input {
   background: rgba(0, 0, 0, 0.4);
 }
 /* ===== NAVBAR ===== */
-nav {
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
+  padding: 20px 60px;
   background: #111;
+  position: sticky;
+  top: 0;
 }
 
-nav .logo {
+.navbar .logo {
+  color: white;
   font-weight: bold;
   font-size: 20px;
 }
 
-nav ul {
+.navbar ul {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 25px;
 }
 
-nav a {
+.navbar a {
   color: white;
   text-decoration: none;
   transition: 0.3s;
 }
 
-nav a:hover {
+.navbar a:hover {
   color: #667eea;
 }
 
 /* ===== HERO ===== */
 .hero {
-  text-align: center;
-  padding: 120px 20px;
+  height: 100vh;
   background: linear-gradient(135deg, #667eea, #764ba2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   color: white;
 }
 
@@ -292,8 +307,13 @@ nav a:hover {
 
 /* ===== SECTIONS ===== */
 .section {
-  padding: 80px 20px;
+  padding: 100px 20px;
   text-align: center;
+  background: #111;
+  color: white;
+}
+
+.section.light {
   background: #f4f6f9;
   color: #222;
 }
@@ -302,10 +322,11 @@ nav a:hover {
 .project-card {
   background: white;
   padding: 30px;
-  margin: 30px auto;
+  margin: 40px auto;
   width: 320px;
   border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  color: #222;
 }
 
 .btn {
