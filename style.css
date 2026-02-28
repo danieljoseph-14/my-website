@@ -278,3 +278,38 @@ li[draggable="true"]:active {
   background: #e68900;
   transform: scale(1.05);
 }
+/* ===== THEME TOGGLE ===== */
+
+.theme-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 6px 12px;
+  border: none;
+  background: #111;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: 0.3s ease;
+}
+
+.theme-btn:hover {
+  background: #333;
+  transform: scale(1.05);
+}
+
+/* Light Mode Styles */
+.light-mode {
+  background: #f4f6f9 !important;
+}
+
+.light-mode .todo-container {
+  background: white;
+  color: black;
+}
+
+.light-mode #taskList li {
+  background: #eee;
+  color: black;
+}
