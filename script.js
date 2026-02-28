@@ -120,3 +120,21 @@ function updateCounter() {
   const counter = document.getElementById("taskCounter");
   counter.textContent = activeCount + " task" + (activeCount !== 1 ? "s" : "") + " left";
 }
+function clearCompleted() {
+  const tasks = document.querySelectorAll("#taskList li");
+
+  tasks.forEach(li => {
+    const span = li.querySelector(".task-text");
+
+    if (span.classList.contains("completed")) {
+      li.style.opacity = "0";
+      li.style.transform = "scale(0.8)";
+      setTimeout(() => li.remove(), 300);
+    }
+  });
+
+  setTimeout(() => {
+    updateStorage();
+    updateCounter();
+  }, 350);
+}
