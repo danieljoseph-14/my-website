@@ -257,3 +257,8 @@ li[draggable="true"]:active {
   background: #444;
   transform: scale(1.05);
 }
+#taskCounter {
+  margin-top: 15px;
+  font-size: 14px;
+  opacity: 0.9;
+}

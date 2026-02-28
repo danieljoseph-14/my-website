@@ -10,6 +10,8 @@ function addTask() {
   const task = { text: text, completed: false };
   createTaskElement(task);
   saveTask(task);
+  taskList.appendChild(li);
+updateCounter();
 
   taskInput.value = "";
 }
@@ -42,12 +44,16 @@ li.setAttribute("draggable", true);
     setTimeout(() => {
       li.remove();
       removeTask(task.text);
+      removeTask(task.text);
+updateCounter();
     }, 300);
   });
 
   li.appendChild(span);
   li.appendChild(deleteBtn);
   taskList.appendChild(li);
+  updateStorage();
+updateCounter();
 }
 
 function saveTask(task) {
@@ -59,6 +65,7 @@ function saveTask(task) {
 function loadTasks() {
   let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
   tasks.forEach(task => createTaskElement(task));
+  updateCounter();
 }
 
 function removeTask(text) {
@@ -93,4 +100,18 @@ function filterTasks(type) {
       li.style.display = isCompleted ? "flex" : "none";
     }
   });
+}
+function updateCounter() {
+  const tasks = document.querySelectorAll("#taskList li");
+  let activeCount = 0;
+
+  tasks.forEach(li => {
+    const span = li.querySelector(".task-text");
+    if (!span.classList.contains("completed")) {
+      activeCount++;
+    }
+  });
+
+  const counter = document.getElementById("taskCounter");
+  counter.textContent = activeCount + " task" + (activeCount !== 1 ? "s" : "") + " left";
 }
