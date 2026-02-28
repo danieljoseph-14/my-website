@@ -242,3 +242,78 @@ body:not(.light-mode) .input-group input {
 body:not(.light-mode) .input-group input {
   background: rgba(0, 0, 0, 0.4);
 }
+/* ===== NAVBAR ===== */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: #111;
+}
+
+nav .logo {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #667eea;
+}
+
+/* ===== HERO ===== */
+.hero {
+  text-align: center;
+  padding: 120px 20px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+/* ===== SECTIONS ===== */
+.section {
+  padding: 80px 20px;
+  text-align: center;
+  background: #f4f6f9;
+  color: #222;
+}
+
+/* ===== PROJECT CARD ===== */
+.project-card {
+  background: white;
+  padding: 30px;
+  margin: 30px auto;
+  width: 320px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 18px;
+  background: #667eea;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+}
