@@ -10,8 +10,8 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background: #111;
-  color: white;
+  background: white;
+  color: black;
 }
 
 nav ul {
@@ -21,8 +21,14 @@ nav ul {
 }
 
 nav a {
-  color: white;
+  color: black;
   text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+nav a:hover {
+  color: #667eea;
 }
 
 /* Hero */
